@@ -14,11 +14,12 @@
 
   <div class="info">
     <p><strong>Name:</strong><%= @attraction.name %></p>
-    <p><strong>Total Number of Users:</strong> 19</p>
-    <p><strong>Ticket Requirement:</strong> 2</p>
-    <p><strong>Height Requirement:</strong> 36 inches</p>
-    <p><strong>Nausea Rating:</strong> 2</p>
-    <p><strong>Happiness Rating:</strong> 2</p>
+    <!-- <p><strong>Total Number of Users:</strong> 19</p> -->
+    <p><strong>Ticket Requirement:</strong><%= @attraction.tickets          %></p>
+    <p><strong>Height Requirement:</strong><%= @attraction.nausea_rating    %></p>
+    <p><strong>Nausea Rating:     </strong><%= @attraction.happiness_rating %></p>
+    <p><strong>Happiness Rating:  </strong><%= @attraction.min_height       %></p>
+      <%= button_to("Go on this ride", action: "create", controller: 'rides', method: 'get', params: { ride: { user_id: current_user.id, attraction_id: @attraction.id }}) %>
       <%= link_to 'Edit Attraction', edit_attraction_path(@attraction) %> |
       <%= link_to 'Back', attractions_path %>
   </div>
@@ -28,4 +29,3 @@
 
   
 </body>
-

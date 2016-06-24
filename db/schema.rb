@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 20160622164519) do
 
   create_table "users", force: :cascade do |t|
     t.string  "name"
-    t.integer "height"
-    t.integer "happiness"
-    t.integer "nausea"
-    t.integer "tickets"
+    t.integer "height",          default: 5
+    t.integer "happiness",       default: 5
+    t.integer "nausea",          default: 5
+    t.integer "tickets",         default: 5
     t.string  "password_digest"
     t.boolean "admin",           default: false
   end

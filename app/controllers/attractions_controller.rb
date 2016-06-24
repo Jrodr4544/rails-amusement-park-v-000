@@ -24,17 +24,9 @@ class AttractionsController < ApplicationController
   # POST /attractions
   # POST /attractions.json
   def create
-    @attraction = Attraction.new(attraction_params)
-
-    respond_to do |format|
-      if @attraction.save
-        format.html { redirect_to @attraction, notice: 'Attraction was successfully created.' }
-        format.json { render :show, status: :created, location: @attraction }
-      else
-        format.html { render :new }
-        format.json { render json: @attraction.errors, status: :unprocessable_entity }
-      end
-    end
+    @attraction = Attraction.create(attraction_params)
+    @attraction.save
+    redirect_to attraction_path(@attraction)
   end
 
   # PATCH/PUT /attractions/1
