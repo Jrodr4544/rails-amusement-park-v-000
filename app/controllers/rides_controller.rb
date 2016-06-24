@@ -4,11 +4,9 @@ class RidesController < ApplicationController
   end
 
   def create
-    @ride = Ride.new
-
-    @ride = Ride.create(ride_params)
-    alert = @ride.take_ride
-    redirect_to user_path(current_user), :alert => alert
+    @ride           = Ride.create(ride_params)
+    flash[:notice]  = @ride.take_ride
+    redirect_to user_path(current_user)
   end
   
   private

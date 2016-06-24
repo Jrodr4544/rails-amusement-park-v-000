@@ -4,7 +4,6 @@ class Ride < ActiveRecord::Base
   belongs_to :attraction
 
   def take_ride
-    # binding.pry
     
     if self.user.tickets < self.attraction.tickets && self.user.height < self.attraction.min_height
       "Sorry. You do not have enough tickets the #{self.attraction.name}. You are not tall enough to ride the #{attraction.name}."

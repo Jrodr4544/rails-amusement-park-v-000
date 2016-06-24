@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   has_many :rides
   has_many :attractions, through: :rides
   # validates :password, presence: true
- # validates :password,  :confirmation => true,  :unless => "password.blank?"
-
+  # validates :password,  :confirmation => true,  :unless => "password.blank?"
+  
   has_secure_password
 
 
