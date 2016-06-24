@@ -1,2 +1,10 @@
-<%= link_to 'See attractions', attractions_path %>
-<%= current_user.name if current_user %>
+
+
+<%= 'ADMIN'           if current_user.admin     %>
+
+<% if current_user %>
+<p>Name:    <%= current_user.name    %></p>
+<p>Mood:    <%= current_user.mood    %></p>
+<p>Tickets: <%= current_user.tickets %></p>
+<p>Height:  <%= current_user.height  %></p>
+<% end %>

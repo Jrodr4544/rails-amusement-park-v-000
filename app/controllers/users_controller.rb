@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: [:show, :edit, :update]
 
   def index
   end
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user
+    # set_user passes @user to form only when actions [:show,:edit,:update] are called
   end
 
   def create
@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    redirect_to root_path
   end
 
   private

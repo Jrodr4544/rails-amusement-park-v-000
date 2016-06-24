@@ -4,7 +4,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user][:id])
+    # binding.pry
+    @user = User.find_by(name: params[:user][:name]) || User.find(params[:user][:id])
     if @user
       session[:user_id] = @user.id
       redirect_to user_path(@user)
@@ -14,7 +15,7 @@ class SessionsController < ApplicationController
   end  
 
   def destroy
-    session.destroy(:user_id)
+    session.destroy
     redirect_to root_path
   end  
 end

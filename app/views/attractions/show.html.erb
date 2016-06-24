@@ -1,5 +1,31 @@
-<p id="notice"><%= notice %></p>
+<body>
+    
+      </div>
+    </div>
 
+    <!-- content -->
+    <div class="container" role="main">
+      <p id="notice"></p>
 
-<%= link_to 'Edit', edit_attraction_path(@attraction) %> |
-<%= link_to 'Back', attractions_path %>
+<div class="center">
+  <div class="pic">
+    <img src="http://www.allthingsclipart.com/05/amusement.park.05.jpg" height="250">
+  </div>
+
+  <div class="info">
+    <p><strong>Name:</strong><%= @attraction.name %></p>
+    <p><strong>Total Number of Users:</strong> 19</p>
+    <p><strong>Ticket Requirement:</strong> 2</p>
+    <p><strong>Height Requirement:</strong> 36 inches</p>
+    <p><strong>Nausea Rating:</strong> 2</p>
+    <p><strong>Happiness Rating:</strong> 2</p>
+      <%= link_to 'Edit Attraction', edit_attraction_path(@attraction) %> |
+      <%= link_to 'Back', attractions_path %>
+  </div>
+</div>
+
+    </div>
+
+  
+</body>
+
